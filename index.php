@@ -1,5 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+    $con = new PDO("mysql:host=database-epgal.cinrt0cz5hud.us-east-1.rds.amazonaws.com;dbname=parcial", "admin", "epgalcrede17") or die("Failed to connect to MySQL: " . mysqli_connect_error());
+    ?>
+      <?php
+
+$rs = $con->query("SELECT * FROM animes");
+while($row = $rs->fetch(PDO::FETCH_OBJ)){
+
+    echo '
+    <tr>
+    <th class="w-1/3 py-2 px-4 bg-gray-200 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Imagem</th>
+    <th class="w-1/3 py-2 px-4 bg-gray-200 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Nome</th>
+    <th class="w-1/3 py-2 px-4 bg-gray-200 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Email</th>
+    <th class="w-1/3 py-2 px-4 bg-gray-200 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Telefone</th>
+</tr>
+    ';
+
+}
+
+?> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
