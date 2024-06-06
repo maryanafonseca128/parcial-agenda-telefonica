@@ -24,12 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b">
-                         <td class="py-2 px-4"><img class="w-20 h-20 object-cover" src="https://via.placeholder.com/150" alt="João Silva"></td>
-                        <td class="py-2 px-4 text-sm text-gray-700">João Silva</td>
-                        <td class="py-2 px-4 text-sm text-gray-700">joao.silva@example.com</td>
-                        <td class="py-2 px-4 text-sm text-gray-700">(11) 1234-5678</td>
-                    </tr>
+                   
                     <?php
 
 $rs = $con->query("SELECT * FROM agenda");
@@ -37,28 +32,17 @@ while($row = $rs->fetch(PDO::FETCH_OBJ)){
 
     echo '
     <tr class="border-b">
-    <td class="py-2 px-4"><img class="w-20 h-20 object-cover" src="https://via.placeholder.com/150" alt="João Silva"></td>
-   <td class="py-2 px-4 text-sm text-gray-700">João Silva</td>
-   <td class="py-2 px-4 text-sm text-gray-700">joao.silva@example.com</td>
-   <td class="py-2 px-4 text-sm text-gray-700">(11) 1234-5678</td>
+    <td class="py-2 px-4"><img class="w-20 h-20 object-cover" src='.$row->imagem.' alt="João Silva"></td>
+   <td class="py-2 px-4 text-sm text-gray-700">'.$row->nome.'</td>
+   <td class="py-2 px-4 text-sm text-gray-700">'.$row->email.'</td>
+   <td class="py-2 px-4 text-sm text-gray-700">'.$row->telefone.'</td>
 </tr>
     ';
 
 }
 
 ?> 
-                    <tr class="border-b bg-gray-50">
-                        <td class="py-2 px-4"><img class="w-20 h-20 object-cover" src="https://via.placeholder.com/150" alt="Maria Oliveira"></td>
-                        <td class="py-2 px-4 text-sm text-gray-700">Maria Oliveira</td>
-                        <td class="py-2 px-4 text-sm text-gray-700">maria.oliveira@example.com</td>
-                        <td class="py-2 px-4 text-sm text-gray-700">(21) 9876-5432</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-2 px-4"><img class="w-20 h-20 object-cover" src="https://via.placeholder.com/150" alt="Carlos Souza"></td>
-                        <td class="py-2 px-4 text-sm text-gray-700">Carlos Souza</td>
-                        <td class="py-2 px-4 text-sm text-gray-700">carlos.souza@example.com</td>
-                        <td class="py-2 px-4 text-sm text-gray-700">(31) 2468-1357</td>
-                    </tr>
+                   
                     <!-- Adicione mais linhas conforme necessário -->
                 </tbody>
             </table>
